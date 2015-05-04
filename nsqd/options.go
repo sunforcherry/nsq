@@ -12,7 +12,7 @@ import (
 
 type nsqdOptions struct {
 	// basic options
-	ID                     int64    `flag:"worker-id" cfg:"id"`
+	ID                     int64    `flag:"worker-id" cfg:"id"` // struct tag
 	Verbose                bool     `flag:"verbose"`
 	TCPAddress             string   `flag:"tcp-address"`
 	HTTPAddress            string   `flag:"http-address"`

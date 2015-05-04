@@ -177,11 +177,11 @@ func (cfg config) Validate() {
 func main() {
 
 	flagSet := nsqFlagset()
-	flagSet.Parse(os.Args[1:])
+	flagSet.Parse(os.Args[1:]) //Parse将命令行中的参数解析进入flagSet中，有相同的参数则替换flagSet初始化的值
 
 	rand.Seed(time.Now().UTC().UnixNano())
 
-	if flagSet.Lookup("version").Value.(flag.Getter).Get().(bool) {
+	if flagSet.Lookup("version").Value.(flag.Getter).Get().(bool) { //？接口的实现嵌套
 		fmt.Println(version.String("nsqd"))
 		return
 	}
